@@ -1,0 +1,80 @@
+﻿@model IEnumerable<LibraryManegement.Models.BookBorrowOnLoan>
+
+
+<div class="container">
+
+    <div>
+        <h2 class="float-left">Book Borrow On Loan</h2>
+        <a class="btn btn-outline-primary float-right" href="@Url.Action("Create", "BookBorrowOnLoans")" role="button">Thêm</a>
+    </div>
+
+    <table class=" table table-hover">
+
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Book.Book_title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Pupils.Author_first_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fine_paid)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Lost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Overdue)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date_issued)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date_due_to_return)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date_returned)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book.Book_title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pupils.Author_first_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fine_paid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Overdue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_issued)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_due_to_return)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_returned)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

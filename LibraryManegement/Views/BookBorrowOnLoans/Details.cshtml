@@ -1,0 +1,82 @@
+﻿@model LibraryManegement.Models.BookBorrowOnLoan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BookBorrowOnLoan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Book.Book_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book.Book_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pupils.Author_first_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pupils.Author_first_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fine_paid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fine_paid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Overdue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Overdue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_issued)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_issued)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_due_to_return)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_due_to_return)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_returned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_returned)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

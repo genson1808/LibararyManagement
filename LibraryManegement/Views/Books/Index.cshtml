@@ -1,0 +1,63 @@
+﻿@model IEnumerable<LibraryManegement.Models.Book>
+
+
+<div class="container">
+
+    <div>
+        <h2 class="float-left">Sách</h2>
+        <a class="btn btn-outline-primary float-right" href="@Url.Action("Create", "Books")" role="button">Thêm</a>
+    </div>
+
+    <table class=" table table-hover">
+
+        <thead>
+            <tr>
+                <th>
+                    Genres
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Number_of_copies)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Book_title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Book_price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Book_of_publictaion)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genres.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Number_of_copies)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book_title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book_price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book_of_publictaion)
+                </td>
+                <td>
+                    @Html.ActionLink("Sửa", "Edit", new { id = item.IsBn }) |
+                    @Html.ActionLink("Chi Tiết", "Details", new { id = item.IsBn }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.IsBn })
+                </td>
+            </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+

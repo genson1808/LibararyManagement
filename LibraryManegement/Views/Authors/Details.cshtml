@@ -1,0 +1,42 @@
+﻿@model LibraryManegement.Models.Author
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Author</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Author_first_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author_first_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Author_middle_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author_middle_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Author_last_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author_last_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Sửa", new { id = Model.Id }) |
+    @Html.ActionLink("Trở lại", "Index")
+</p>
